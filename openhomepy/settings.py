@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'openhomepy',
+    'devices',
+    'core',
 ]
 
 MIDDLEWARE_CLASSES = [

@@ -20,4 +20,8 @@
             </tr>
         </tbody>
     </table>
+    {{ devices }}
+    {% for device in devices %}
+        {{ device.device_status }}
+    {% endfor %}
 {% endblock content %}

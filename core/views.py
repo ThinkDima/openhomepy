@@ -6,11 +6,11 @@ class HomepageView(ListView):
     template_name='index.html'
     model = LogicalDevice
     queryset = LogicalDevice.objects.filter(connected=True)
-    context_object_name = 'device'
+    context_object_name = 'devices'
 
 
 class ConnectView(ListView):
     template_name='connect.html'
     model = LogicalDevice
     queryset = LogicalDevice.objects.filter(connected=False)
-    context_object_name = 'device'
+    context_object_name = 'devices'

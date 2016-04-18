@@ -9,4 +9,4 @@ RUN pip install -r requirements.txt
 
 WORKDIR /app
 
-ENTRYPOINT ["python manage.py runserver 0.0.0.0:80"]
+ENTRYPOINT bash

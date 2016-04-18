@@ -1,0 +1,3 @@
+# Local development dependencies go here
+Django==1.9.4
+Django-environ==0.4.0

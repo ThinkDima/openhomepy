@@ -22,4 +22,10 @@
         {% endfor %}
         </tbody>
     </table>
+    {% for pdevice in devices %}
+        {{ pdevice.device_id }}<br>
+        {% for ldevice in pdevice.logicaldevice_set.all %}
+            &nbsp;{{ ldevice.device_id }}<br>
+        {% endfor %}
+    {% endfor %}
 {% endblock content %}

@@ -12,4 +12,5 @@
         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" style="padding:0;"><a class="btn btn-secondary pull-right" role="button" href="{% url 'discovered' %}">Cancel</a></div>
         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="padding:0;"><input class="btn btn-primary pull-right" type="submit" value="Save" /></div>
     </form>
+    {{ form.device_name.errors }}
 {% endblock content %}

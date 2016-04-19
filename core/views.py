@@ -9,8 +9,10 @@ class HomepageView(ListView):
     context_object_name = 'devices'
 
 
-class ConnectView(ListView):
-    template_name = 'connect.html'
+class DiscoveredView(ListView):
+    template_name = 'discovered.html'
     model = PhysicalDevice
     #queryset = PhysicalDevice.objects.all()
     context_object_name = 'devices'
+
+

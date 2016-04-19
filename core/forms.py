@@ -13,3 +13,4 @@ class ConnectForm(forms.ModelForm):
             self.fields['device_id'].widget.attrs['readonly'] = True
             self.fields['device_type'].widget.attrs['readonly'] = True
             self.fields['device_name'].widget.attrs['autofocus'] = True
+            self.fields['device_name'].widget.attrs['class'] = 'form-control'

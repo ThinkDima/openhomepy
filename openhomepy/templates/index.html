@@ -14,7 +14,7 @@
             <tr>
                 <td style="vertical-align:middle">{{ device.device_name }}</td>
             {% if device.device_status|lower == 'off' %}
-                <td><a href="#" class="btn btn-default btn-lg" role="button"><i style="color:red;font-size:20px;" class="fa fa-fire" aria-hidden="true"></i></a</td>
+                <td><a href="#" class="btn btn-default btn-lg" role="button"><span class="blink_me"><i style="color:red;font-size:20px;" class="fa fa-fire" aria-hidden="true"></i></span></a></td>
             {% else %}
                 <td><a href="#" class="btn btn-default btn-lg" role="button"><i style="color:green;font-size:20px;" class="fa fa-fire" aria-hidden="true"></i></a</td>
             {% endif %}
@@ -23,3 +23,17 @@
         </tbody>
     </table>
 {% endblock content %}
+
+{% block additional_javascript %}
+<script type='text/javascript'>//<![CDATA[
+    $(function(){
+    function blinker() {
+        $('.blink_me').fadeOut(500);
+        $('.blink_me').fadeIn(500);
+    }
+
+    setInterval(blinker, 1000);
+    });//]]>
+</script>
+{% endblock additional_javascript %}
+

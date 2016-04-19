@@ -5,3 +5,9 @@ body {
 .vcenter {
     vertical-align: middle;
 }
+
+.blink {
+    color: #FFF !important;
+    background: #FFF;
+    !important;
+}

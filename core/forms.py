@@ -17,7 +17,7 @@ class ConnectForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super(ConnectForm, self).clean()
         device_name = cleaned_data.get('device_name')
-        if LogicalDevice.objects.filter(device_name__iexact=device_name).count() > 0:
+        if LogicalDevice.objects.filter(device_name__iexact=device_name).exclude(pk=self.instance.pk).count() > 0:
             self._errors['device_name'] = ErrorList(['Name Already Exists!'])
 
         return cleaned_data

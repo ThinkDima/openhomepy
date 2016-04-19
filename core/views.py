@@ -20,5 +20,5 @@ class DiscoveredView(ListView):
 class ConnectView(UpdateView):
     template_name = 'connect.html'
     model = LogicalDevice
+    form_class = ConnectForm
     success_url = reverse_lazy('dashboard')
-    fields = ['device_name']

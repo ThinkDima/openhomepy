@@ -3,7 +3,14 @@
     <h1>Connect Device</h1><br />
     <form action="" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <label>Device ID</label>
+        <p>{{ form.instance.device_id }}</p>
+
+        <label>Device Type</label>
+        <p>{{ form.instance.device_type }}</p>
+
+        <label>Device Name</label>
+        <p>{{ form.device_name }}</p>
         <input type="submit" value="Connect" />
     </form>
 {% endblock content %}

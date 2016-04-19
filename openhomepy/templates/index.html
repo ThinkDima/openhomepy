@@ -10,18 +10,16 @@
             </tr>
         </thead>
         <tbody>
+        {% for device in devices %}
             <tr>
-                <td style="vertical-align:middle">switch one</td>
+                <td style="vertical-align:middle">{{ device.device_name }}</td>
+            {% if device.device_status|lower == 'off' %}
                 <td><a href="#" class="btn btn-default btn-lg" role="button"><i style="color:red;font-size:20px;" class="fa fa-fire" aria-hidden="true"></i></a</td>
-            </tr>
-            <tr>
-                <td style="vertical-align:middle">switch 2</td>
+            {% else %}
                 <td><a href="#" class="btn btn-default btn-lg" role="button"><i style="color:green;font-size:20px;" class="fa fa-fire" aria-hidden="true"></i></a</td>
+            {% endif %}
             </tr>
+        {% endfor %}
         </tbody>
     </table>
-    {{ devices }}
-    {% for device in devices %}
-        {{ device.device_status }}
-    {% endfor %}
 {% endblock content %}

@@ -7,10 +7,17 @@
 
         <label class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Device Type</label> {{ form.instance.device_type }}<br /><br />
 
-        <label class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Device Name:</label> <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="padding:0;">{{ form.device_name }}</div><br /><br /><br />
-
+        <label class="col-xs-3 col-sm-3 col-md-3 col-lg-3">Device Name:</label> <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" style="padding:0;">{{ form.device_name }}</div>
+        <div class="clearfix">&nbsp;</div>
+        {% for error in form.device_name.errors %}
+            <label class="col-xs-3 col-sm-3 col-md-3 col-lg-3">&nbsp;</label>
+            <div class="form-group has-error">
+                <label class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">{{ error|escape }}</label>
+            </div>
+        {% endfor %}
+        <div class="clearfix">&nbsp;</div>
         <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" style="padding:0;"><a class="btn btn-secondary pull-right" role="button" href="{% url 'discovered' %}">Cancel</a></div>
         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" style="padding:0;"><input class="btn btn-primary pull-right" type="submit" value="Save" /></div>
     </form>
-    {{ form.device_name.errors }}
+
 {% endblock content %}
